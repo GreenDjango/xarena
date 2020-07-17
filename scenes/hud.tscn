@@ -1,0 +1,70 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/hud/background_timer.svg" type="Texture" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeRemaining" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -40.0
+margin_top = 16.0
+margin_right = 40.0
+margin_bottom = 63.0
+text = "4:30"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="TimeRemaining"]
+visible = false
+show_behind_parent = true
+position = Vector2( 40, 22.1986 )
+scale = Vector2( 0.907878, 0.904514 )
+color = Color( 0.180392, 0.180392, 0.180392, 0.560784 )
+offset = Vector2( -36.7068, -22.0125 )
+antialiased = true
+polygon = PoolVector2Array( 9.35359, 8.78887, 64.1823, 8.78887, 68.0987, 9.89443, 70.0568, 11, 71.0359, 13.2111, 72.015, 17.6334, 72.015, 26.4779, 71.0359, 30.9002, 70.0568, 33.1113, 68.0987, 34.2169, 64.1823, 35.3225, 9.35359, 35.3225, 5.43726, 34.2169, 3.47909, 33.1113, 2.5, 30.9002, 1.52092, 26.4779, 1.52092, 17.6334, 2.5, 13.2111, 3.47909, 11, 5.43726, 9.89443 )
+
+[node name="TextureRect" type="TextureRect" parent="TimeRemaining"]
+modulate = Color( 0, 0, 0, 0.529412 )
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -36.4205
+margin_top = -14.3173
+margin_right = 35.5795
+margin_bottom = 12.6827
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -15.5
+margin_top = -15.5
+margin_right = 15.5
+margin_bottom = 15.5
+color = Color( 1, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}

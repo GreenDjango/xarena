@@ -1,4 +1,9 @@
 
+export/
+
+# VisualStudio-specific ignores
+.vscode/
+
 # Godot-specific ignores
 .import/
 export.cfg

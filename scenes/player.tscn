@@ -1,0 +1,308 @@
+[gd_scene load_steps=56 format=2]
+
+[ext_resource path="res://scripts/KinematicBody.gd" type="Script" id=1]
+[ext_resource path="res://scripts/AnimatedSprite3D.gd" type="Script" id=2]
+[ext_resource path="res://assets/sprites/white_widow.png" type="Texture" id=3]
+
+[sub_resource type="CapsuleShape" id=53]
+radius = 0.155925
+height = 0.0920642
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 102, 0, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 204, 0, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 306, 0, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 408, 0, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 510, 0, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 612, 0, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 714, 0, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 816, 0, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 918, 0, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 1020, 0, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 1122, 0, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 0, 520, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 102, 520, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 204, 520, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 306, 520, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 408, 520, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 510, 520, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 612, 520, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 714, 520, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 816, 520, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 918, 520, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 1020, 520, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 1122, 520, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 1224, 520, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 0, 416, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 102, 416, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 204, 416, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 0, 208, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 102, 208, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 204, 208, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 306, 208, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=34]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 408, 208, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=35]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 510, 208, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 0, 104, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=37]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 102, 104, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=38]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 204, 104, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=39]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 306, 104, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=40]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 408, 104, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=41]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 510, 104, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=42]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 612, 104, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=43]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 714, 104, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=44]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 816, 104, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=45]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 918, 104, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=46]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 1020, 104, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=47]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 1122, 104, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=48]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 1224, 104, 102, 104 )
+
+[sub_resource type="AtlasTexture" id=49]
+flags = 3
+atlas = ExtResource( 3 )
+region = Rect2( 1326, 104, 102, 104 )
+
+[sub_resource type="SpriteFrames" id=50]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"loop": true,
+"name": "idle",
+"speed": 8.0
+}, {
+"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
+"loop": true,
+"name": "death",
+"speed": 8.0
+}, {
+"frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ) ],
+"loop": false,
+"name": "hurt",
+"speed": 8.0
+}, {
+"frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
+"loop": true,
+"name": "run",
+"speed": 8.0
+}, {
+"frames": [ SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ) ],
+"loop": true,
+"name": "idle2",
+"speed": 8.0
+} ]
+
+[sub_resource type="ShaderMaterial" id=51]
+
+[sub_resource type="SphereMesh" id=52]
+
+[node name="Player" type="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.333, 0 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+sprite_path = NodePath("../Player/AnimatedSprite3D")
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, -0.163223, 0 )
+shape = SubResource( 53 )
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+billboard = 1
+frames = SubResource( 50 )
+animation = "idle"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.333, -7.45058e-09 )
+visible = false
+process_material = SubResource( 51 )
+draw_pass_1 = SubResource( 52 )

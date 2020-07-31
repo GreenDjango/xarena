@@ -1,4 +1,4 @@
-# <img src="icon.png" alt="drawing" width="50"/> Xarena
+# <img src="icon.png" alt="xarena icon" width="50" style="margin-bottom: -3px;"/> Xarena
 
 [![release][1]][2] [![size][20]][21] [![license][7]][8]
 

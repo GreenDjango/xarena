@@ -13,7 +13,6 @@ func _ready():
 	sprite_to_use = get_node(sprite_path)
 	set_physics_process(true)
 	set_as_toplevel(true)
-	pass # Replace with function body.
 
 func _physics_process(delta):
 	#if last_fps != Performance.get_monitor(Performance.TIME_FPS):
@@ -41,6 +40,7 @@ func _physics_process(delta):
 		acceleration = 0
 		velocity = velocity.move_toward(Vector3.ZERO, friction * delta)
 		sprite_to_use.play("idle")
+# warning-ignore:return_value_discarded
 	move_and_slide(velocity);
 	#var collide = move_and_collide(velocity, true, true, true)
 	#if collide:

@@ -1,11 +1,42 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/hud/background_timer.svg" type="Texture" id=1]
+[ext_resource path="res://assets/fonts/Arial-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://assets/particles/Fire_Flame-Particle.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 26
+outline_size = 1
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.390511, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=4]
+emission_shape = 1
+emission_sphere_radius = 16.97
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 60.0
+gravity = Vector3( 0, -100, 0 )
+initial_velocity = 76.92
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.07
+scale_random = 0.16
+color_ramp = SubResource( 3 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -16,23 +47,20 @@ margin_left = -40.0
 margin_top = 16.0
 margin_right = 40.0
 margin_bottom = 63.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 2
 text = "4:30"
 align = 1
 valign = 1
 __meta__ = {
+"_edit_group_": true,
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
-
-[node name="Polygon2D" type="Polygon2D" parent="TimeRemaining"]
-visible = false
-show_behind_parent = true
-position = Vector2( 40, 22.1986 )
-scale = Vector2( 0.907878, 0.904514 )
-color = Color( 0.180392, 0.180392, 0.180392, 0.560784 )
-offset = Vector2( -36.7068, -22.0125 )
-antialiased = true
-polygon = PoolVector2Array( 9.35359, 8.78887, 64.1823, 8.78887, 68.0987, 9.89443, 70.0568, 11, 71.0359, 13.2111, 72.015, 17.6334, 72.015, 26.4779, 71.0359, 30.9002, 70.0568, 33.1113, 68.0987, 34.2169, 64.1823, 35.3225, 9.35359, 35.3225, 5.43726, 34.2169, 3.47909, 33.1113, 2.5, 30.9002, 1.52092, 26.4779, 1.52092, 17.6334, 2.5, 13.2111, 3.47909, 11, 5.43726, 9.89443 )
 
 [node name="TextureRect" type="TextureRect" parent="TimeRemaining"]
 modulate = Color( 0, 0, 0, 0.529412 )
@@ -41,15 +69,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -36.4205
-margin_top = -14.3173
-margin_right = 35.5795
-margin_bottom = 12.6827
+margin_left = -52.0
+margin_top = -18.5
+margin_right = 48.0
+margin_bottom = 18.5
 texture = ExtResource( 1 )
 expand = true
 stretch_mode = 6
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -65,6 +92,42 @@ margin_right = 15.5
 margin_bottom = 15.5
 color = Color( 1, 0, 0, 1 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
+
+[node name="PowerProgress" type="TextureProgress" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -126.71
+margin_top = -161.419
+margin_right = -62.7097
+margin_bottom = -97.419
+rect_scale = Vector2( 1.3, 1.3 )
+mouse_default_cursor_shape = 2
+step = 2.0
+value = 46.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 3 )
+fill_mode = 7
+tint_under = Color( 0.345098, 0.345098, 0.345098, 0.67451 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="FireParticles" type="Particles2D" parent="PowerProgress"]
+modulate = Color( 1, 1, 1, 0.87451 )
+show_behind_parent = true
+position = Vector2( 33.5848, 24.4841 )
+emitting = false
+amount = 40
+lifetime = 0.6
+speed_scale = 0.8
+randomness = 1.0
+process_material = SubResource( 4 )
+texture = ExtResource( 4 )

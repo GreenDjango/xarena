@@ -1,10 +1,10 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://scripts/KinematicBody.gd" type="Script" id=1]
 [ext_resource path="res://scripts/AnimatedSprite3D.gd" type="Script" id=2]
 [ext_resource path="res://assets/sprites/white_widow.png" type="Texture" id=3]
 
-[sub_resource type="CapsuleShape" id=53]
+[sub_resource type="CapsuleShape" id=1]
 radius = 0.155925
 height = 0.0920642
 
@@ -276,10 +276,6 @@ animations = [ {
 "speed": 8.0
 } ]
 
-[sub_resource type="ShaderMaterial" id=51]
-
-[sub_resource type="SphereMesh" id=52]
-
 [node name="Player" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.333, 0 )
 script = ExtResource( 1 )
@@ -290,19 +286,14 @@ sprite_path = NodePath("../Player/AnimatedSprite3D")
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, -0.163223, 0 )
-shape = SubResource( 53 )
+shape = SubResource( 1 )
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 billboard = 1
 frames = SubResource( 50 )
 animation = "idle"
+frame = 11
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="Particles" type="Particles" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.333, -7.45058e-09 )
-visible = false
-process_material = SubResource( 51 )
-draw_pass_1 = SubResource( 52 )

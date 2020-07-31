@@ -1,0 +1,422 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://assets/fonts/Arial-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/fonts/Arial.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/sprites/menu_background.png" type="Texture" id=3]
+[ext_resource path="res://scripts/lobby.gd" type="Script" id=4]
+[ext_resource path="res://assets/sprites/load-10x7.png" type="Texture" id=5]
+[ext_resource path="res://scripts/gifAnim.gd" type="Script" id=6]
+[ext_resource path="res://resources/btn.stylebox" type="StyleBox" id=7]
+[ext_resource path="res://assets/fonts/Pixel_dead.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://scripts/button.gd" type="Script" id=9]
+[ext_resource path="res://scenes/character.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/hud/btn2.svg" type="Texture" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+outline_size = 4
+outline_color = Color( 0.282353, 0.129412, 0, 1 )
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_bottom = 6
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 212, 186 )
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 214, 186 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 50
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_bottom = 6
+font_data = ExtResource( 1 )
+
+[sub_resource type="GDScript" id=11]
+script/source = "extends Button
+
+export(String) var animation_name : String
+var animPlayer : AnimationPlayer
+
+func _ready():
+	connect(\"button_down\", self, \"_on_down\")
+	connect(\"button_up\", self, \"_on_up\")
+	animPlayer = get_parent().get_node(\"AnimationPlayer\")
+
+func _on_down():
+	animPlayer.play_backwards(animation_name)
+	
+func _on_up():
+	animPlayer.queue(animation_name)
+"
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 18
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=8]
+resource_name = "btn"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("ButtonClient:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 0.366022, 1 ),
+"update": 0,
+"values": [ Vector2( 0.8, 0.8 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "btn2"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("ButtonServer:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 0.366022, 1 ),
+"update": 0,
+"values": [ Vector2( 0.8, 0.8 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "btn3"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("ButtonCharacter:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 0.307786, 1 ),
+"update": 0,
+"values": [ Vector2( 0.8, 0.8 ), Vector2( 1, 1 ) ]
+}
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 7
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -155.0
+margin_right = 512.0
+margin_bottom = -42.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.921569, 0.921569, 0.921569, 1 )
+text = "Xarena"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="."]
+margin_left = 44.1656
+margin_top = 39.126
+margin_right = 284.166
+margin_bottom = 110.126
+custom_fonts/font = SubResource( 2 )
+align = 1
+max_length = 15
+placeholder_text = "Name"
+placeholder_alpha = 0.7
+caret_blink = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonServer" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -324.99
+margin_top = -128.0
+margin_right = -35.99
+margin_bottom = -29.0
+rect_pivot_offset = Vector2( 144.5, 49.5 )
+mouse_default_cursor_shape = 2
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/focus = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 7 )
+custom_styles/normal = ExtResource( 7 )
+custom_fonts/font = SubResource( 3 )
+text = "Server"
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+animation_name = "btn2"
+
+[node name="ButtonClient" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -629.29
+margin_top = -128.0
+margin_right = -340.29
+margin_bottom = -29.0
+rect_pivot_offset = Vector2( 144.5, 49.5 )
+mouse_default_cursor_shape = 2
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/focus = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 7 )
+custom_styles/normal = ExtResource( 7 )
+custom_fonts/font = SubResource( 3 )
+text = "Client"
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+animation_name = "btn"
+
+[node name="ButtonCharacter" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -915.207
+margin_top = -202.918
+margin_right = -839.207
+margin_bottom = -136.918
+rect_pivot_offset = Vector2( 38, 33 )
+mouse_default_cursor_shape = 2
+custom_styles/hover = SubResource( 9 )
+custom_styles/normal = SubResource( 12 )
+custom_fonts/font = SubResource( 10 )
+text = "+"
+script = SubResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+animation_name = "btn3"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.27451 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerMenu" type="Panel" parent="."]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.901961 )
+light_mask = -2147483647
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -289.5
+margin_top = -262.0
+margin_right = 289.5
+margin_bottom = 262.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PlayerMenu"]
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerMenu/ScrollContainer"]
+margin_right = 770.0
+margin_bottom = 471.6
+rect_pivot_offset = Vector2( 174.092, 197 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+
+[node name="PanelContainer" parent="PlayerMenu/ScrollContainer/HBoxContainer" instance=ExtResource( 10 )]
+margin_bottom = 459.0
+
+[node name="PanelContainer2" parent="PlayerMenu/ScrollContainer/HBoxContainer" instance=ExtResource( 10 )]
+margin_left = 260.0
+margin_right = 510.0
+margin_bottom = 459.0
+
+[node name="PanelContainer3" parent="PlayerMenu/ScrollContainer/HBoxContainer" instance=ExtResource( 10 )]
+margin_left = 520.0
+margin_right = 770.0
+margin_bottom = 459.0
+
+[node name="HScrollBar" type="HScrollBar" parent="PlayerMenu"]
+visible = false
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -22.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -114.0
+margin_top = -142.0
+margin_right = 115.0
+margin_bottom = 205.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ItemList" type="ItemList" parent="Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -99.5
+margin_top = 41.0
+margin_right = 100.5
+margin_bottom = 227.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="LoadGif" type="TextureRect" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -57.5203
+margin_top = -147.556
+margin_right = 59.4797
+margin_bottom = -33.5558
+rect_pivot_offset = Vector2( 58.5, 57 )
+texture = SubResource( 4 )
+expand = true
+stretch_mode = 6
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+size_x = 10
+size_y = 7
+frame_par_sec = 20
+
+[node name="ButtonPlay" type="Button" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 4.5
+margin_top = -60.0
+margin_right = 101.5
+margin_bottom = -19.0
+rect_pivot_offset = Vector2( 48.5, 20.5 )
+custom_fonts/font = SubResource( 5 )
+text = "Play"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonBack" type="Button" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -102.408
+margin_top = -60.1091
+margin_right = -5.40784
+margin_bottom = -19.1091
+rect_pivot_offset = Vector2( 48.5, 20.5 )
+custom_fonts/font = SubResource( 5 )
+text = "Back"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -89.5
+margin_top = 7.0
+margin_right = 89.5
+margin_bottom = 31.0
+custom_fonts/font = SubResource( 6 )
+text = "Awaiting Players..."
+align = 1
+valign = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/btn = SubResource( 8 )
+anims/btn2 = SubResource( 7 )
+anims/btn3 = SubResource( 13 )

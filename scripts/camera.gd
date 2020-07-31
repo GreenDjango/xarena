@@ -8,7 +8,6 @@ var _target : Spatial = null
 
 func _ready():
 	_target = get_node(target_path)
-	pass
 
 func _physics_process(delta):
 	translation.x = move_toward( translation.x, _target.translation.x + offset_x, delta * smoothness)

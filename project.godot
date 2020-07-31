@@ -16,16 +16,23 @@ _global_script_class_icons={
 [application]
 
 config/name="Xarena"
-run/main_scene="res://scenes/game.tscn"
+config/description="Xarena is a cross-plateform game for Linux/Android.
+It's a gungeon game like, playable until 4 players with bluetooth or solo with IA."
+run/main_scene="res://scenes/lobby.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 DebugDraw="*res://addons/zylann.debug_draw/debug_draw.gd"
+GameNetwork="*res://scripts/network/GameNetwork.gd"
 
 [debug]
 
-settings/stdout/print_fps=true
+gdscript/warnings/return_value_discarded=false
+
+[editor_plugins]
+
+enabled=PoolStringArray( "time-tracker" )
 
 [rendering]
 
